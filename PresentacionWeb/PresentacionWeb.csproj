@@ -78,7 +78,6 @@
     <Content Include="wfrEliminarLibro.aspx" />
     <Content Include="wfrInicio.aspx" />
     <Content Include="wfrLibros.aspx" />
-    <Content Include="zEliminar.aspx" />
     <Content Include="wrfListalibros.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -125,13 +124,6 @@
     </Compile>
     <Compile Include="wfrLibros.aspx.designer.cs">
       <DependentUpon>wfrLibros.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="zEliminar.aspx.cs">
-      <DependentUpon>zEliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="zEliminar.aspx.designer.cs">
-      <DependentUpon>zEliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="wfrPlantilla.Master.cs">
       <DependentUpon>wfrPlantilla.Master</DependentUpon>
