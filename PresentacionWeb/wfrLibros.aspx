@@ -62,31 +62,31 @@
             <div class="col-2">
                 <asp:Label ID="Label1" runat="server" Text="Clave Libro"></asp:Label>
                 <asp:TextBox ID="txtClaveLibro" runat="server" CssClass="form-control"></asp:TextBox>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtClaveLibro" ValidationGroup="3" runat="server" forecolor="red" ErrorMessage="*Debe escribir un titulo">*</asp:RequiredFieldValidator>
             </div>
 
                <div class="col-4">
                 <asp:Label ID="Label2" runat="server" Text="Titulo"></asp:Label>
-                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" ValidationGroup="3" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvTitulo" ControlToValidate="txtTitulo" ValidationGroup="3" runat="server" forecolor="red" ErrorMessage="*Debe escribir un titulo">*</asp:RequiredFieldValidator>
             </div>
 
             <div class="col-3">
                 <asp:TextBox ID="txtIdAutor" runat="server" Visible="false"></asp:TextBox>
                 <asp:Label ID="Label3" runat="server" Text="Autor"></asp:Label>
 
-                 <div class="input-group mb-3">
+            <div class="input-group mb-3">
 
-                    <asp:TextBox ID="txtAutor" runat="server"
-                        CssClass="form-control"
-                        aria-describedby="btnModalAutor"
-                        ReadOnly="true" ValidationGroup="3"> </asp:TextBox>
-
+                <asp:TextBox  ID="txtAutor" runat="server"
+                    CssClass="form-control"
+                    aria-describedby="btnModalAutor"
+                    ReadOnly="true" ValidationGroup="3"> </asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvAutor" ControlToValidate="txtAutor" ValidationGroup="3"  forecolor="red" runat="server" ErrorMessage="*Debe seleccionar un autor">*</asp:RequiredFieldValidator>
+                    
                     <button class="btn btn-outline-primary" type="button" id="btnModalAutor"
-                        data-bs-toggle="modal"
-                        data-bs-target="#autorModal">
-
-                        Buscar</button>
-
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtAutor" ValidationGroup="3" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+                    data-bs-toggle="modal"
+                    data-bs-target="#autorModal">
+                    Buscar</button>
 
                 </div>
             </div>
@@ -98,6 +98,8 @@
                 <div class="input-group mb-3">
                     <asp:TextBox ID="txtCategoria" ReadOnly="true" runat="server" CssClass="form-control"
                         aria-describedby="btnModalCategoria"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="RfvCategoria" ControlToValidate="txtCategoria" ValidationGroup="3"  forecolor="red" runat="server" ErrorMessage="*Debe seleccionar un categoria">*</asp:RequiredFieldValidator>
+                    
 
                     <button class="btn btn-outline-primary" type="button" id="btnModalCategoria" style="width: 62px"
                         data-bs-toggle="modal"
@@ -108,7 +110,7 @@
             </div>
         </div>
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe registrar una Categoria" ControlToValidate="txtCategoria" ValidationGroup="3"></asp:RequiredFieldValidator>
+      
      
         <br />
 
@@ -116,7 +118,7 @@
 
         <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-warning" OnClick="btnRegresar_Click" />
        
-        <asp:ValidationSummary ID="ValidationSummary" runat="server" ValidationGroup="3" />
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="red" ValidationGroup="3" />
     </div>
    
 

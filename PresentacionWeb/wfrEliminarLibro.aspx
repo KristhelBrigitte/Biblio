@@ -37,7 +37,7 @@
                    <h6 class="card-subtittle">Categoria <%=ViewState["_categoria"] %> </h6>
                    <p class="card-text">El libro será Eliminado! Confirma la eliminación?</p>
 
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClas="btn btn-danger" OnClick="btnEliminar_Click" />
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar"  cssClass="btn btn-danger" OnClick="btnEliminar_Click" />
 
                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" cssClass="btn btn-warning"/>
                 </div>

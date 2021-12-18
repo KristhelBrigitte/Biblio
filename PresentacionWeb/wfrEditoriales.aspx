@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="frmBody" runat="server">
      <div class="container col-11">
-        <div class="card-header text-center">
+        <div class="card-header text-center  text-white bg-primary mb-3">
             <h1>Mantenimiento de Editoriales</h1>
 
              <%if (Session["_err"] != null) { %>
@@ -32,16 +32,27 @@
               <%Session["_exito"] = null;
                 }%>
 
-
         </div>
-         <asp:Label ID="Label1" runat="server" Text="Clave de Editorial:"></asp:Label>
+         <br />
+         <div class="card">
+             <h3>Clave de Editorial</h3>
+           
          
-         <asp:TextBox ID="txtClaveEditorial" runat="server"></asp:TextBox>
-
-         <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
+         <asp:TextBox ID="txtClaveEditorial" runat="server"  CssClass="form-control"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="rfvClaveE" runat="server" validationGroup="11" forecolor="red"  ControlToValidate="txtClaveEditorial" ErrorMessage="*Debe digitar la clave">*</asp:RequiredFieldValidator>
+        <h3>Nombre </h3>
          
-         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click"/>
-         <asp:Button ID="btnRegresar" runat="server" Text="Button" CssClass="btn btn-warning" />
+         <asp:TextBox ID="txtNombre" runat="server"  CssClass="form-control"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="rfvNombreE" runat="server" validationGroup="11" forecolor="red" ControlToValidate="txtNombre" ErrorMessage="*Debe digitar el nombre de la Editorial">*</asp:RequiredFieldValidator>
+         <br />
+             <div class="row mt-4">
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" validationGroup="11" OnClick="btnGuardar_Click" width="25%" />
+                
+                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-warning" OnClick="btnRegresar_Click"  width="25%"   />
+             </div>
+      
          </div>
+         </div>
+
+    <asp:ValidationSummary ID="ValidationSummary1" forecolor="Red" ValidationGroup="11" runat="server" />
 </asp:Content>

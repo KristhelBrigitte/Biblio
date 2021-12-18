@@ -31,7 +31,7 @@
 
               <%Session["_exito"] = null;
                 }%>
-        </div
+        </div>
         <br />
 
         <div class="row mt-3">
@@ -88,6 +88,5 @@
 
         </asp:GridView>
     </div>
-
 
 </asp:Content>

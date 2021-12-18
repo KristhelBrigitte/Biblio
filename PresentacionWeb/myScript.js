@@ -6,10 +6,8 @@ function AbrirModal(modal) {
         $('#btnModalAutor').click();
     } else if (modal == 2) {
         $('#btnModalCategoria').click();
-    } else {
-        $('#lnkEjemplares').click();
-    }
-   
+    } 
 
 }
+
 

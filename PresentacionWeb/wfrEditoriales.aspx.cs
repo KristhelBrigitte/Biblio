@@ -161,5 +161,10 @@ namespace PresentacionWeb
             }
             return result;
         }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("wfrListaEditoriales.aspx");
+        }
     }
 }

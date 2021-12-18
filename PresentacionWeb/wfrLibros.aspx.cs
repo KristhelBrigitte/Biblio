@@ -91,8 +91,7 @@ namespace PresentacionWeb
           
         }
 
-        
-
+   
         private bool hayCambios(ref string bCL,ref string bT,ref string bAu,ref string bCat)
         {
             bool result = false;
@@ -180,8 +179,6 @@ namespace PresentacionWeb
                 throw;
             }
         }
-
-      
 
         private void recuperarCategoria(string claveCategoria)
         {

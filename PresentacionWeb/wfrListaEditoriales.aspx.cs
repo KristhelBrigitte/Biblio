@@ -12,11 +12,14 @@ namespace PresentacionWeb
     public partial class WebForm2 : System.Web.UI.Page
     {
 
+
         LNEditorial lnE = new LNEditorial(Config.getCadConec);
         LNEjemplar lnEJ = new LNEjemplar(Config.getCadConec);
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarEditoriales();
+            cargarEjemplares("");
+
         }
 
         private void cargarEditoriales(string condicion = "")
@@ -68,21 +71,20 @@ namespace PresentacionWeb
 
         protected void LnkEjemplares_Command(object sender, CommandEventArgs e)
         {
-            Session["_claveEditorial"] = e.CommandArgument.ToString();
-            cargarEjemplares();
+            Session["_claveEditEje"] = e.CommandArgument.ToString();
+            cargarEjemplares(Session["_claveEditEje"].ToString());
         }
 
-        private void cargarEjemplares()
+        private void cargarEjemplares(string condicion)
         {
             DataTable dt;
 
             try
             {
 
-                dt = lnEJ.listarTodos(Session["_claveEditorial"].ToString());
+                dt = lnEJ.listarTodos(condicion);
                 if (dt != null)
                 {
-
                     grvEjemplares.DataSource = dt;
                     grvEjemplares.DataBind();
                 }
@@ -96,10 +98,9 @@ namespace PresentacionWeb
             }
         }
 
-        protected void LnkEjemplares_Click(object sender, EventArgs e)
+        protected void btnVerEjemplares_Click(object sender, EventArgs e)
         {
-            string javaScript = "AbrirModal(3)";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", javaScript, true);
+
         }
     }
 }
