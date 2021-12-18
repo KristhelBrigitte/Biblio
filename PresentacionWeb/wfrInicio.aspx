@@ -7,14 +7,15 @@
     <div class="container">
         <div class="card-header text-center">
             <h1> Sistema de Biblioteca (EJEMPLO)   </h1>
-            <br />  
+            <br />
+
             <h2>
                 Esta es una aplicación de ejemplo. Usamos ASP.NET
             </h2>
 
             <br />
-
             <p>Con algunas funcionalidades para administrar una Biblioteca </p>
+           
         </div>
     </div>
 </asp:Content> 

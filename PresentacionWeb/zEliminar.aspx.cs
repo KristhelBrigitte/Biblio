@@ -14,6 +14,7 @@ namespace PresentacionWeb
     {
         ELibro libro = new ELibro();
         LNLibro lnLibro = new LNLibro(Config.getCadConec);
+        
         private void cargarDataGrid(string condicion="")
         {
             DataTable dt;
@@ -22,7 +23,6 @@ namespace PresentacionWeb
                 dt = lnLibro.listarTodos(condicion, true);
                 if (dt != null)
                 {
-                  
                     grdLibros.DataSource = dt;
                     grdLibros.DataBind();
                 }

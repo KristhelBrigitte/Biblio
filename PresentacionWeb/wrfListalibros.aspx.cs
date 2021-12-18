@@ -93,5 +93,10 @@ namespace PresentacionWeb
             Session["_claveLibro"] = e.CommandArgument.ToString();
             Response.Redirect("wfrEliminarLibro.aspx");
         }
+
+        protected void lnkEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -57,8 +57,6 @@
                ControlToValidate ="txtTitulo" Font-Italic="true" ForeColor="red" ValidationGroup="1"></asp:RequiredFieldValidator>
         </div>
 
-
-
         <br />
         <asp:GridView ID="grdLibros" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Width="100%" AllowPaging="True" OnPageIndexChanging="grdLibros_PageIndexChanging" PageSize="15">
             <AlternatingRowStyle BackColor="Gainsboro" />
@@ -70,7 +68,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkEliminar" runat="server" CommandArgument='<%# Eval("Clave").ToString() %>' ForeColor="Red" OnCommand="lnkEliminar_Command">Eliminar <i class="fas fa-trash"></i></asp:LinkButton>
+                        <asp:LinkButton ID="lnkEliminar" runat="server" CommandArgument='<%# Eval("Clave").ToString() %>' ForeColor="Red" OnCommand="lnkEliminar_Command" OnClick="lnkEliminar_Click">Eliminar <i class="fas fa-trash"></i></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Clave" HeaderText="Clave" />

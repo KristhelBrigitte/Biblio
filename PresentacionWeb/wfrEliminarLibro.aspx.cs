@@ -22,7 +22,6 @@ namespace PresentacionWeb
                 {
                     recuperarLibro(Session["_claveLibro"].ToString());
                     btnEliminar.Enabled = true;
-
                 }
                 else
                 {

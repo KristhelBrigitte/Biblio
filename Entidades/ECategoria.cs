@@ -8,19 +8,21 @@ namespace Entidades
     {
         string claveCategoria;
         string descripcion;
-        
+
         //Propiedades
         public string ClaveCategoria { get; set; }
         public string Descripcion { get; set; }
-
+      
         //Constructores
         public ECategoria() {
             ClaveCategoria = string.Empty;
             Descripcion = string.Empty;
+         
         }
-        public ECategoria(string clave, string desc) {
+        public ECategoria(string clave, string desc, bool ex) {
             ClaveCategoria = clave;
             Descripcion = desc;
+        
         }
     }
 }

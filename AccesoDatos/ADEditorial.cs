@@ -25,7 +25,7 @@ namespace AccesoDatos
         {
             bool result = false;
             string sentencia;
-            sentencia = $"Select 1 From editorial Where editorial='{editorial.Nombre}'";
+            sentencia = $"Select 1 From editorial Where nombre='{editorial.Nombre}'";
 
             SqlCommand comandoSQL = new SqlCommand();
             SqlConnection conexionSQL = new SqlConnection(CadConexion);
@@ -121,8 +121,9 @@ namespace AccesoDatos
                     dato.Read();//
                     editorial.ClaveEditorial = dato.GetString(0);
                     editorial.Nombre = dato.GetString(1);
-                 
+
                 }
+            
 
                 conexion.Close();
             }
@@ -143,7 +144,7 @@ namespace AccesoDatos
             DataTable dt = new DataTable();
             SqlDataAdapter ad;
             SqlConnection conexion = new SqlConnection(CadConexion);
-            string sentencia = "Select claveEditorial as Clave, nombre as Editorial from Editorial";
+            string sentencia = "Select claveEditorial as claveEditorial, nombre from Editorial";
             if (!string.IsNullOrEmpty(condicion))
             {
                 sentencia = $"{sentencia} Where {condicion}";
@@ -196,10 +197,10 @@ namespace AccesoDatos
             return result;
         }
 
-        public int eliminar(string condicion)
+        public int eliminar(string clave)
         {
             int result = -1;
-            string sentencia = $"Delete from Editorial where {condicion}";
+            string sentencia = $"Delete from Editorial where claveEditorial='{clave}'";
 
             SqlConnection conexion = new SqlConnection(CadConexion);
             SqlCommand comando = new SqlCommand(sentencia, conexion);

@@ -100,12 +100,10 @@ namespace LogicaNegocio
         }
 
 
-
         public EEditorial buscarRegistro(string condicion)
         {
             EEditorial editorial;
             ADEditorial adEdit = new ADEditorial(cadConexion);
-
 
             try
             {

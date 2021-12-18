@@ -66,16 +66,17 @@ namespace PresentacionWeb
                 if (Session["_claveLibro"] != null)
                 {
                     condicion = $"claveLibro='{Session["_claveLibro"].ToString()}'";
-    
+                    elibro = lnL.buscarRegistro(condicion);
+
                     if (elibro != null)
                     {
 
-                        elibro = lnL.buscarRegistro(condicion);
+                   
                         cookie["_clav1"] = elibro.ClaveLibro;
                         cookie["_titulo1"] = elibro.Titulo;
                         cookie["_autor1"] = elibro.ClaveAutor;
                         cookie["_categoria1"] = elibro.Clavecategoria.ClaveCategoria;
-                        cookie.Expires = DateTime.Now.AddMinutes(20);
+                        cookie.Expires = DateTime.Now.AddMinutes(15);
                         Response.Cookies.Add(cookie);
 
                         txtClaveLibro.Text = elibro.ClaveLibro;
@@ -230,7 +231,7 @@ namespace PresentacionWeb
             {
                 ECategoria cate = new ECategoria();
                 cate.ClaveCategoria = txtIdCategoria.Text;
-                if(Session["_claveLibro"] == null)              {
+                if(Session["_claveLibro"] == null){
                     elibro = new ELibro(txtClaveLibro.Text, txtTitulo.Text, txtIdAutor.Text, cate, false);
                 }
                 else{
@@ -281,8 +282,6 @@ namespace PresentacionWeb
         {
             if (lnL.claveLibroRepetida(txtClaveLibro.Text) == false)
             {
-
-
                 if (lnL.libroRepetido(elibro) == false)
                 {
                     if (lnL.insertar(elibro) > 0)
